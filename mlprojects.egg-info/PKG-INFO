@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: mlprojects
+Version: 0.0.1
+Author: Kavya
+Author-email: kavyarana0706@gmail.com
+Requires-Dist: pandas
+Requires-Dist: flask
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
