@@ -7,7 +7,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
-
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_obj
@@ -21,6 +20,7 @@ class dataTransformation:
 
     def get_data_transformer_obj(self):
         try:
+            print("data transformation started")
             numerical_columns= ["writing_score", "reading_score"]
             categoritical_columns= [
                 "gender",
@@ -41,7 +41,7 @@ class dataTransformation:
                 steps=[
                     ("ipmuter", SimpleImputer(strategy='most_frequent')),
                     ("one_hot_encoder", OneHotEncoder(handle_unknown='ignore')),
-                    ("scaler", StandardScaler())
+                    ("scaler", StandardScaler(with_mean=False))
 
                 ]
             )
